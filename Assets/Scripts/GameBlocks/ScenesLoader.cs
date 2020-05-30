@@ -24,11 +24,24 @@ public class ScenesLoader : MonoBehaviour
         StartCoroutine(ReloadLevelWithDelay(delay));
     }
 
+    public void LoadNextLevel(float delay)
+    {
+        StartCoroutine(LoadNextLevelWithDelay(delay));
+    }
+
     IEnumerator ReloadLevelWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
 
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
+    }
+
+    IEnumerator LoadNextLevelWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentScene + 1);
     }
 }

@@ -65,7 +65,7 @@ public class CubeMovement : MonoBehaviour
     void MoveTo(Vector3 newPosition, Vector3 direction)
     {
 
-        //Debug.DrawRay(newPosition, Vector3.down, Color.green, 2f);
+        Debug.DrawRay(newPosition, Vector3.down, Color.green, 2f);
         if (Physics.Raycast(newPosition, Vector3.down, 1f) && !Physics.Raycast(transform.position, direction, 1f))
         {
             allowInput = false;
