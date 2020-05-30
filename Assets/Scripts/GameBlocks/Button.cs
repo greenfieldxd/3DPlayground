@@ -30,10 +30,10 @@ public class Button : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        StartCoroutine(TimeDelay(waitTime)); //DoTween with delay   
+        StartCoroutine(MoveWithTimeDelay(waitTime)); //DoTween with delay   
     }
 
-    IEnumerator TimeDelay(float delay)
+    IEnumerator MoveWithTimeDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         transform.DOMoveY(startYPosButton, moveTime);

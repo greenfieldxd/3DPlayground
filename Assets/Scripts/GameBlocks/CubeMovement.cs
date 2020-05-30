@@ -23,7 +23,7 @@ public class CubeMovement : MonoBehaviour
         ScenesLoader.Instance.RestartLevel(reloadLevelDelay);
     }
 
-    
+ 
 
     // Start is called before the first frame update
     void Start()
