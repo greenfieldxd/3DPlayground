@@ -30,6 +30,9 @@ public class FinishTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        CubeMovement cube = other.GetComponent<CubeMovement>();
+        cube.enabled = false;
+
         Instantiate(finishFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
         ScenesLoader.Instance.LoadNextLevel(2f);

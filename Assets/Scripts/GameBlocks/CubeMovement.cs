@@ -10,6 +10,7 @@ public class CubeMovement : MonoBehaviour
     [SerializeField] float jumpPower = 1f;
     [SerializeField] float reloadLevelDelay = 1f;
 
+    [Header("FX")]
     [SerializeField] GameObject particleFXDeath;
 
     bool allowInput;

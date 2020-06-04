@@ -546,7 +546,7 @@ PrefabInstance:
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
@@ -1071,7 +1071,7 @@ PrefabInstance:
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
@@ -2117,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
@@ -4992,7 +4992,7 @@ PrefabInstance:
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
@@ -5217,7 +5217,7 @@ PrefabInstance:
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3926911091536980709, guid: ff3e4c2e3733849b98c02ac0958c5309,
         type: 3}
@@ -6267,11 +6267,11 @@ Transform:
   - {fileID: 2134714872}
   - {fileID: 548139046}
   - {fileID: 1179409731}
+  - {fileID: 604329144}
   - {fileID: 139316780}
   - {fileID: 221402297}
-  - {fileID: 604329144}
-  - {fileID: 802215057}
   - {fileID: 1219022573}
+  - {fileID: 802215057}
   - {fileID: 1855386646}
   - {fileID: 380318097}
   - {fileID: 1004690558}

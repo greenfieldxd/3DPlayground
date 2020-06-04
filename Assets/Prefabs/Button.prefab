@@ -50,6 +50,11 @@ MonoBehaviour:
   moveTime: 0.3
   moveValueButton: -0.09
   moveValueBox: 2
+  duration: 0.2
+  strength: 1
+  vibration: 60
+  randomness: 360
+  coll: {fileID: 3099725694089232105}
   box: {fileID: 0}
 --- !u!33 &571132935803312140
 MeshFilter:

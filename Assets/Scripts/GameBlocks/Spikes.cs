@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class Spikes : MonoBehaviour
 {
+    [Header("Settings")]
     [SerializeField] float maxValue = 0.1f;
     [SerializeField] float moveTime = 1f;
     [SerializeField] float waitTime = 1f;

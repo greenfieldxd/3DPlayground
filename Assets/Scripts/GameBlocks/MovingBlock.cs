@@ -5,53 +5,68 @@ using DG.Tweening;
 
 public class MovingBlock : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] float newPos = -5f;
     [SerializeField] float moveDelay = 1.5f;
-    [SerializeField] float checkTime = 1.5f;
     [SerializeField] float moveTime = 2f;
-    [SerializeField] float waitTime = 4f;
 
+    [Header("Offset between platform and cube")]
     [SerializeField]float offset = 0.45f;
-    float time;
 
+    [Header("References to this gameobject components")]
+    [SerializeField] BoxCollider coll;
+
+    Sequence sequenceMoveBlock;
+
+    CubeMovement cube;
 
     private float startPosY;
+    private bool isCubeHere; //check cube on MovingBlock or not
 
     private void Start()
     {
         startPosY = transform.position.y;
-        
+
+        sequenceMoveBlock = DOTween.Sequence();
+        sequenceMoveBlock.AppendInterval(moveDelay)//Задержка перед движением и проверками
+            .AppendCallback(CheckCubeOnBlock)//Проверяем наличие блока на платформе 
+            .Append(transform.DOMoveY(newPos, moveTime).SetEase(Ease.InOutExpo))//Двигаем платформу вниз
+            .AppendCallback(ChangeColliderStay)//Включаем коллайдер
+            .Append(transform.DOMoveY(startPosY, moveTime).SetEase(Ease.InExpo)).OnComplete(() => sequenceMoveBlock.Rewind());//Поднимаем платформу вверх и перематываем Sequence
+        sequenceMoveBlock.Pause();
+        sequenceMoveBlock.SetAutoKill(false);
+
+       
     }
 
-    private void Update()
-    {
-        time -= Time.deltaTime;
-    }
 
     private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(MoveBlockWithDelay(moveDelay));
-        time = checkTime;
+        cube = other.GetComponent<CubeMovement>();
+        isCubeHere = true;
+        sequenceMoveBlock.Play();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-        if (time < 0 && other != null)
+        isCubeHere = false;
+        ChangeColliderStay();//Выключаем коллайдер если куб выпрыгнул
+    }
+
+    
+
+    void CheckCubeOnBlock()
+    {
+        if (isCubeHere)
         {
-            CubeMovement cube = other.GetComponent<CubeMovement>();
+            cube.transform.DOMoveY(newPos + offset, moveTime).SetEase(Ease.InOutExpo).OnComplete(() => cube.Die());
             cube.enabled = false;
-            other.transform.DOMoveY(newPos + offset, moveTime).SetEase(Ease.InOutExpo).OnComplete(() => cube.Die());
 
         }
     }
 
-
-
-    IEnumerator MoveBlockWithDelay(float delay)
+    void ChangeColliderStay()
     {
-        yield return new WaitForSeconds(delay);
-        transform.DOMoveY(newPos, moveTime).SetEase(Ease.InOutExpo);
-        yield return new WaitForSeconds(waitTime);
-        transform.DOMoveY(startPosY, moveTime).SetEase(Ease.InExpo);
+        coll.enabled = !coll.enabled;
     }
 }
