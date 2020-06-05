@@ -13,13 +13,16 @@ public class CubeMovement : MonoBehaviour
     [Header("FX")]
     [SerializeField] GameObject particleFXDeath;
 
+    [Header("Sounds")]
+    [SerializeField] AudioClip deathSound;
+
     bool allowInput;
 
     public void Die()
     {
         Destroy(gameObject);
         Instantiate(particleFXDeath, transform.position, Quaternion.identity);
-        //play sound
+        AudioManager.Instance.PlaySound(deathSound);
 
         ScenesLoader.Instance.RestartLevel(reloadLevelDelay);
     }
@@ -43,24 +46,44 @@ public class CubeMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Vector3 newPosition = transform.position + Vector3.forward; // new Vector (0, 0, 1)
-            MoveTo(newPosition, Vector3.forward);
+            MoveForward();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Vector3 newPosition = transform.position + Vector3.back;
-            MoveTo(newPosition, Vector3.back);
+            MoveBack();
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            Vector3 newPosition = transform.position + Vector3.right;
-            MoveTo(newPosition, Vector3.right);
+            MoveRight();
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            Vector3 newPosition = transform.position + Vector3.left;
-            MoveTo(newPosition, Vector3.left);
+            MoveLeft();
         }
+    }
+
+    public void MoveLeft()
+    {
+        Vector3 newPosition = transform.position + Vector3.left;
+        MoveTo(newPosition, Vector3.left);
+    }
+
+    public void MoveRight()
+    {
+        Vector3 newPosition = transform.position + Vector3.right;
+        MoveTo(newPosition, Vector3.right);
+    }
+
+    public void MoveBack()
+    {
+        Vector3 newPosition = transform.position + Vector3.back;
+        MoveTo(newPosition, Vector3.back);
+    }
+
+    public void MoveForward()
+    {
+        Vector3 newPosition = transform.position + Vector3.forward; // new Vector (0, 0, 1)
+        MoveTo(newPosition, Vector3.forward);
     }
 
     void MoveTo(Vector3 newPosition, Vector3 direction)

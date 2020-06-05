@@ -14,8 +14,11 @@ public class ScenesLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else
+        {
+            Instance = this;
+        }
 
-        Instance = this;
     }
     #endregion
 
