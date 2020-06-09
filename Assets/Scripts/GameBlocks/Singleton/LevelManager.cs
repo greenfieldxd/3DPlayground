@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    #region Singleton
+    //Singleton
     public static LevelManager Instance { get; private set; }
 
     private void Awake()
@@ -18,25 +18,31 @@ public class LevelManager : MonoBehaviour
             Instance = this;
         }
 
+        score = 0;
+        levelCoins = 0;
+
     }
-    #endregion
 
     [Header("Settings")]
     [SerializeField] GameObject finish;
-    [SerializeField] int levelCoins;
 
-    public static int score { get; private set; }
+
+    public int score { get; private set; }
+    public int levelCoins { get; private set; }
     
-    void Start()
-    {
-        score = 0;
-    }
 
-    public void AddCoin(int plusScore)
+    public void AddScore()
     {
-        score += plusScore;
+        score ++;
         CheckCoins();
     }
+
+    public void NewCoin()
+    {
+        levelCoins ++;
+    }
+
+    
 
     void CheckCoins()
     {

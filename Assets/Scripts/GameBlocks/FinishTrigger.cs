@@ -6,11 +6,9 @@ using DG.Tweening;
 public class FinishTrigger : MonoBehaviour
 {
     [Header("FX Settings")]
-    [SerializeField] GameObject coolFX;
     [SerializeField] GameObject finishFX;
 
     [Header("Config")]
-    [SerializeField] float delayFX = 1f;
     [SerializeField] float waitTime = 1f;
     [SerializeField] float moveTime = 1.5f;
     [SerializeField] float maxValue = 2f;
@@ -20,7 +18,6 @@ public class FinishTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnFX(delayFX));
 
         mySequence = DOTween.Sequence();
         mySequence.Append(transform.DOMoveY(maxValue, moveTime));
@@ -38,12 +35,5 @@ public class FinishTrigger : MonoBehaviour
         ScenesLoader.Instance.LoadNextLevel(2f);
     }
 
-    IEnumerator SpawnFX(float delay)
-    {
-        while (true)
-        {
-            Instantiate(coolFX, transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(delay);
-        }
-    }
+  
 }

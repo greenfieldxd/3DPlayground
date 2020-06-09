@@ -5,7 +5,6 @@ using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] int pointsCoin = 1;
     [SerializeField] AudioClip coinSound;
     [SerializeField] float rotateTime = 2f;
     [SerializeField] Vector3 rotateVector;
@@ -13,6 +12,8 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
+        LevelManager.Instance.NewCoin();
+
         Sequence rotate = DOTween.Sequence();
         rotate.Append(transform.DORotate(rotateVector, rotateTime, RotateMode.FastBeyond360))
             .SetLoops(-1, LoopType.Yoyo);
@@ -20,7 +21,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        LevelManager.Instance.AddCoin(pointsCoin);
+        LevelManager.Instance.AddScore();
         AudioManager.Instance.PlaySound(coinSound);
         Destroy(gameObject);
     }
