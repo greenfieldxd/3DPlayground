@@ -64,24 +64,32 @@ public class CubeMovement : MonoBehaviour
 
     public void MoveLeft()
     {
+        if (!allowInput)  { return; }
+
         Vector3 newPosition = transform.position + Vector3.left;
         MoveTo(newPosition, Vector3.left);
     }
 
     public void MoveRight()
     {
+        if (!allowInput) { return; }
+
         Vector3 newPosition = transform.position + Vector3.right;
         MoveTo(newPosition, Vector3.right);
     }
 
     public void MoveBack()
     {
+        if (!allowInput) { return; }
+
         Vector3 newPosition = transform.position + Vector3.back;
         MoveTo(newPosition, Vector3.back);
     }
 
     public void MoveForward()
     {
+        if (!allowInput) { return; }
+
         Vector3 newPosition = transform.position + Vector3.forward; // new Vector (0, 0, 1)
         MoveTo(newPosition, Vector3.forward);
     }
