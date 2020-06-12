@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] CanvasGroup menu;
     [SerializeField] float fadeDuration = 1f;
     [SerializeField] Slider musicSlider;
+    [SerializeField] Slider effectsSlider;
 
     public void ShowMenu()
     {
@@ -19,6 +20,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 0;
 
         musicSlider.value = AudioManager.Instance.GetMusicVolume() * musicSlider.maxValue;
+        effectsSlider.value = AudioManager.Instance.GetEffectsVolume() * effectsSlider.maxValue;
     }
 
     public void HideMenu()
@@ -34,6 +36,14 @@ public class UIManager : MonoBehaviour
 
     public void MusicVolumeChanged()
     {
+        //делим на maxValue для того чтобы совпадало значение в слайдере от 1 до 10, а в AudioManager от 0.1 до 1
         AudioManager.Instance.SetMusicVolume(musicSlider.value / musicSlider.maxValue);
+    }
+
+    public void EffectsVolumeChanged()
+    {
+        //делим на maxValue для того чтобы совпадало значение в слайдере от 1 до 10, а в AudioManager от 0.1 до 1
+
+        AudioManager.Instance.SetEffectsVolume(effectsSlider.value / effectsSlider.maxValue);
     }
 }
