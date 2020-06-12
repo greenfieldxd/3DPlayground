@@ -5,6 +5,23 @@ using DG.Tweening;
 
 public class CubeMovement : MonoBehaviour
 {
+    #region Singleton
+    public static CubeMovement Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+    }
+    #endregion
+
     [Header("Settings")]
     [SerializeField] float moveTime = 0.5f;
     [SerializeField] float jumpPower = 1f;

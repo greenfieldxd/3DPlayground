@@ -283,6 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4551094123006228896}
   - component: {fileID: 4551094123006228897}
+  - component: {fileID: 7282821874997620761}
   m_Layer: 0
   m_Name: LeanTouch
   m_TagString: Untagged
@@ -334,6 +335,18 @@ MonoBehaviour:
   MovePivotKey: 308
   MultiDragKey: 308
   FingerTexture: {fileID: 2800000, guid: 25c48be3a87ea0f489a6d41c9c9a2194, type: 3}
+--- !u!114 &7282821874997620761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4551094123006228898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ced357565b6d65459f9f388fd355030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4551094123045370559
 GameObject:
   m_ObjectHideFlags: 0

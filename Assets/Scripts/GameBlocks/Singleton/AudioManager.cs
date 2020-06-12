@@ -20,7 +20,8 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             //Get volume music
-            music.volume = PlayerPrefs.GetFloat(PREFS_MUSIC_VOLUME, 0.5f);
+            music.volume = PlayerPrefs.GetFloat(PREFS_MUSIC_VOLUME, defaultValueVolume);
+            effects.volume = PlayerPrefs.GetFloat(PREFS_EFFECTS_VOLUME, defaultValueVolume);
         }
 
     }
@@ -28,6 +29,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] AudioSource music;
     [SerializeField] AudioSource effects;
+    [SerializeField] float defaultValueVolume = 0.5f;
 
     private const string PREFS_MUSIC_VOLUME = "MusicVolume";
     private const string PREFS_EFFECTS_VOLUME = "EffectsVolume";
