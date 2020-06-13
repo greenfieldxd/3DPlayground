@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b29544581cbff48a74923442363fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAngle: 90
+  RequiredAngle: 45
   RequiredArc: 90
   onFinger:
     m_PersistentCalls:
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b29544581cbff48a74923442363fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAngle: 180
+  RequiredAngle: 135
   RequiredArc: 90
   onFinger:
     m_PersistentCalls:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b29544581cbff48a74923442363fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAngle: 0
+  RequiredAngle: 315
   RequiredArc: 90
   onFinger:
     m_PersistentCalls:
@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b29544581cbff48a74923442363fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RequiredAngle: 270
+  RequiredAngle: 225
   RequiredArc: 90
   onFinger:
     m_PersistentCalls:

@@ -7254,7 +7254,7 @@ PrefabInstance:
     - target: {fileID: 6391162909427799390, guid: c2b3076681c7d476c83f5480b948f080,
         type: 3}
       propertyPath: waitTime
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b3076681c7d476c83f5480b948f080, type: 3}
@@ -11831,6 +11831,11 @@ PrefabInstance:
       propertyPath: box
       value: 
       objectReference: {fileID: 8365107119014264514}
+    - target: {fileID: 6391162909427799390, guid: c2b3076681c7d476c83f5480b948f080,
+        type: 3}
+      propertyPath: waitTime
+      value: 5.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b3076681c7d476c83f5480b948f080, type: 3}
 --- !u!4 &3169916445495584205 stripped
