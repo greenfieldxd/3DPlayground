@@ -32,6 +32,11 @@ public class ScenesLoader : MonoBehaviour
         StartCoroutine(LoadNextLevelWithDelay(delay));
     }
 
+    public void LoadFirstScene()
+    {
+        SceneManager.LoadScene(0);
+    }
+
     IEnumerator ReloadLevelWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
