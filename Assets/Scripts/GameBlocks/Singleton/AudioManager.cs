@@ -30,8 +30,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource music;
     [SerializeField] AudioSource effects;
     [SerializeField] float defaultValueVolume = 0.5f;
-    [Header("Music playlist")]
-    [SerializeField] AudioClip[] musicClips;
 
     private const string PREFS_MUSIC_VOLUME = "MusicVolume";
     private const string PREFS_EFFECTS_VOLUME = "EffectsVolume";
